@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var uid = prompt('請輸入帳號');
+        if (uid == null) {
+            console.log('帳號已取消，即將結束');
+        } else {
+            var password = prompt('請輸入密碼');
+            if (password == null) {
+                console.log('密碼已取消，即將結束');
+            } else {
+                if (uid == 'admin' && password == '1234') {
+                    console.log('帳密正確');
+                } else if (uid == 'admin' && password != '1234') {
+                    console.log('密碼err');
+                } else if (uid != 'admin' && password == '1234') {
+                    console.log('帳號err');
+                } else if (uid != 'admin' && password != '1234') { /* 這段可不寫 */
+                    console.log('帳密err');
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
