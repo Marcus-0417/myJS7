@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 算術運算子 -->
+    <!-- +加 -->
+    <!-- -減 -->
+    <!-- *乘 -->
+    <!-- /除(兩數相除，取商) -->
+    <!-- %除(兩數相除，取餘數) -->
+
+    <script>
+        var a = 5;/* 宣告變數a的同時指派5給a */
+        var b = 3;
+        /* 輸入視窗 */
+        var c=window.prompt('請則一輸入 + - * / %');
+
+        /* 檢查變數c是否為加號 */
+        /* ==(左右兩邊的資料類型可以不同) */
+        /* ===(左右兩邊的資料類型必須相同) */
+        if(c==='+'){
+            document.write(`${a}+${b}=${a + b}<br>`);
+        }else if(c==='-'){
+            document.write(`${a}-${b}=${a - b}<br>`);
+        }else if(c==='*'){
+            document.write(`${a}*${b}=${a * b}<br>`);
+        }else if(c==='/'){
+            document.write(`${a}/${b}=${a / b}<br>`);
+        }else if(c==='%'){
+            document.write(`${a}%${b}=${a % b}<br>`);
+        }else
+            document.write('低能兒，看不懂中文???')
+
+        // 字串字面值，必須使用反引號`包起來，變數要使用${變數名稱或運算式}
+        /* 5+3=8 */
+        // document.write(`${a}+${b}=${a + b}<br>`)
+        // document.write(`${a}-${b}=${a - b}<br>`)
+        // document.write(`${a}*${b}=${a * b}<br>`)
+        // document.write(`${a}/${b}=${a / b}<br>`)
+        // document.write(`${a}%${b}=${a % b}<br>`)
+
+        // document.write(a + '+' + b + '=' + (a + b) + '<br>');
+        // document.write(a + '-' + b + '=' + (a - b) + '<br>');
+        // document.write(a + '*' + b + '=' + (a * b) + '<br>');
+        // document.write(a + '/' + b + '=' + (a / b) + '<br>');
+        // document.write(a + '%' + b + '=' + (a % b) + '<br>');
+        // document.write('<br>');
+
+        // document.write(a);
+        // document.write('+');
+        // document.write(b);
+        // document.write('=');
+        // document.write(a + b + '<br>');
+
+        // document.write(a);
+        // document.write('-');
+        // document.write(b);
+        // document.write('=');
+        // document.write(a - b + '<br>');
+
+        // document.write(a);
+        // document.write('*');
+        // document.write(b);
+        // document.write('=');
+        // document.write(a * b + '<br>');
+
+        // document.write(a);
+        // document.write('/');
+        // document.write(b);
+        // document.write('=');
+        // document.write(a / b + '<br>');
+        
+        // document.write(a);
+        // document.write('%');
+        // document.write(b);
+        // document.write('=');
+        // document.write(a % b + '<br>');
+    </script>
+
+
+</body>
+
+</html>

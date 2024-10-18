@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 不斷彈出輸入視窗，直到「取消」結束
+        // 布林 boolean (true/false)
+
+        var pass = 0;
+        var failed = 0;
+        var total = 0;
+        var avg = 0;
+
+        while (true) {
+            var score = prompt('請輸入分數');
+            if (score == null) {
+                break; /* 脫離迴圈到迴圈結尾的下一行 */
+            }
+
+            // 去除空白後是否有內容
+            // trim()>>去除資料最前最後的空白格(字與字的空白之間不會被去除)
+            if (score.trim() == '') {
+                alert('沒寫東西回去重寫!')
+                continue;
+            }
+
+            // 是否為數字
+            if (isNaN(Number(score))) {
+                alert('看不懂中文?叫你打數字!')
+                continue;
+            }
+
+            // 將輸入的分數(字串)轉為數值
+            score = Number(score);
+
+            //及格
+            if (score >= 60) {
+                pass++;
+            } else {
+                // 不及格
+                failed++;
+            }
+            // 總分
+            total = total + score;
+
+        }
+        // 總平均
+        avg = (total / (pass + failed)).toFixed(2);
+
+        alert('及格人數' + pass + '人');
+        alert('不及格人數' + failed + '人');
+        alert('總分' + total + '分');
+        alert('總平均' + avg + '分');
+        console.log(`及格：${pass}人`);
+        console.log(`不及格：${failed}人`);
+        console.log(`總分：${total}分`);
+        console.log(`總平均：${avg}分`);
+
+        // 100/20/50/取消
+        // 輸出
+        // 及格人數:1人
+        // 不及格人數:2人
+        // 總分:170
+        // 總平均(小數點兩位):56.67
+    </script>
+</body>
+
+</html>

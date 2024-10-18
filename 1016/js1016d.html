@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 請輸入單價、數量後算出金額 */
+        /* 金額>=1000以上，免運!!!否則運費為金額的1% */
+
+        var a = Number(prompt('請輸入單價'));
+        var b = Number(prompt('請輸入數量'));
+        var c = 0
+        /* 邏輯運算子 交集&& 聯集|| */
+
+        if (isNaN(a) || isNaN(b)) {
+            document.write('單價或數量錯誤');
+        } else
+
+            if (a * b >= 1000) {
+                document.write('您的消費金額為TWD $' + a * b + '恭喜獲得免運!!!')
+            } else if (a * b < 1000) {
+                document.write('您的消費金額為TWD $' + a * b + '未達免運標準:((運費為TWD $' + a * b * 0.01)
+            }
+        if (a * b < 1000) {
+            c = a * b * 0.01;
+        }
+        {    /* 輸出結果 */
+            console.log('單價' + a);
+            console.log('數量' + b);
+            console.log('金額' + a * b);
+            console.log('運費' + c);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 請使用輸入視窗(prompt)來輸入任意值並檢查是否為偶數 */
+
+        var a = prompt('請輸入任意值');
+
+        /* typeof(值)>>檢測資料類型 */
+        /* Number(值)>>字串轉數值(含小數點) */
+        /* parseInt(值)>>字串轉數值(無條件捨去小數點只保留整數) */
+
+        // console.log(Number(a));
+        // console.log(parseInt(a));
+
+        if (isNaN(Number(a))) {
+            // console.log('非數值無法判定')
+            document.write('非數值無法判定');
+        } else {
+            if (a % 2 === 0) {
+                // console.log('偶數');
+                document.write(a + '是偶數');
+            } else if (a % 2 !== 0) {
+                // console.log('基數');
+                document.write(a + '是基數');
+            }
+        }
+    </script>
+</body>
+
+</html>

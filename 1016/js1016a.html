@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="myFun('+');">+</button>
+    <button onclick="myFun('-');">-</button>
+    <button onclick="myFun('*');">*</button>
+    <button onclick="myFun('/');">/</button>
+    <button onclick="myFun('%');">%(餘數)</button>
+
+    <script>
+        /* 建立myFun函式 */
+        /* 函式參數(變數) */
+        function myFun(symbol) {
+            var a = 5;
+            var b = 3;
+
+            if (symbol === '+') {
+                console.log(`${a}+${b}=${a + b}`);
+            } else if (symbol === '-') {
+                console.log(`${a}-${b}=${a - b}`);
+            } else if (symbol === '*') {
+                console.log(`${a}*${b}=${a * b}`);
+            } else if (symbol === '/') {
+                console.log(`${a}/${b}=${(a / b).toFixed(2)}`);
+            } else if (symbol === '%') {
+                console.log(`${a}%${b}=${a % b}`);
+            }
+        }
+    </script>
+</body>
+
+</html>

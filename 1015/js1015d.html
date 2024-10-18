@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="add();">+</button>
+    <button onclick="sub();">-</button>
+    <button onclick="mul();">*</button>
+    <button onclick="div();">/</button>
+    <button onclick="rem();">%(餘數)</button>
+
+    <script>
+        var a = 5;
+        var b = 3;
+
+        /* function 函式名稱(){指令} */
+        /* 加法函式 */
+        function add() {
+            console.log(`${a}+${b}=${a + b}`);
+        }
+        /* 減法函式 */
+        function sub() {
+            console.log(`${a}-${b}=${a - b}`);
+        }
+        /* 乘法函式 */
+        function mul() {
+            console.log(`${a}*${b}=${a * b}`);
+        }
+        /* 除法函式(.toFixed(數字顯示到第幾位)) */
+        function div() {
+            console.log(`${a}/${b}=${(a / b).toFixed(2)}`);
+            
+            var result = (a / b).toFixed(2);
+            console.log(`${a}/${b}=${result}`);
+        }
+        /* 餘數函式 */
+        function rem() {
+            console.log(`${a}%${b}=${a % b}`);
+        }
+
+    </script>
+</body>
+
+</html>
