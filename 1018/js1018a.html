@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+</head>
+
+<body>
+    <script>
+        var username = "admin"
+        var password = "1234"
+
+        while (true) {
+            var a = prompt("請輸入帳號");
+            var b = prompt("請輸入密碼");
+
+            if (!a || !b) {
+                alert('未輸入帳號或密碼，請重新輸入!');
+                continue;
+            }
+
+            if (a === username && b === password) {
+                alert("帳號密碼正確");
+            } else if (a === username && b != password) {
+                alert("密碼錯誤!");
+            } else if (a != username && b === password) {
+                alert("帳號錯誤!");
+            } else if (a != username && b != password) {
+                alert("帳號與密碼錯誤!");
+            }
+        }
+    </script>
+</body>
+
+</html>
