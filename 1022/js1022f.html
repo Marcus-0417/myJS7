@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+
+<body>
+    <button onclick="fun1()">無參數，無傳回值</button>
+    <button onclick="alert(fun2())">有參數，有傳回值</button>
+    <button onclick="fun3(5,3)">有參數，無傳回值</button>
+    <button onclick="alert(fun4(3,2))">有參數，有傳回值</button>
+    <button onclick="prompt('請輸入運算符號')((fun5()))">按我</button>
+    <script>
+        /* 函式：不會自己執行，等待被呼叫 */
+        /* 無參數，無傳回值 */
+        function fun1() {
+            alert('Hi');
+        }
+
+        /* 無參數，有傳回值 */
+        /* 必須要有接收者 */
+        function fun2() {
+            return 'Hello';
+        }
+        alert(fun2());
+
+        /* 有參數，無傳回值 */
+        function fun3(a, b) {
+            console.log(a + b);
+        }
+
+        /* 有參數，有傳回值 */
+        function fun4(a, b) {
+            return a + b;
+        }
+
+        /* 建立一個函式，帶有參數(n1, n2, symbol) */
+        /* 依據運算符號(symbol)算出二數結果 */
+        /* 最後回傳，是否為奇數 */
+
+
+        function fun5(n1, n2, symbol) {
+            var result = 0;
+            /* 第一種寫法 */
+            if (symbol == '+') {
+                result = n1 + n2;
+            } else if (symbol == '-') {
+                result = n1 - n2;
+            } else if (symbol == '*') {
+                result = n1 * n2;
+            } else if (symbol == '/') {
+                result = (n1 / n2).toFixed(0);
+            }else{
+                return 'err';
+            }
+            return result;
+
+            /* 第二種寫法 */
+            switch (symbol) {
+                case '+': result = n1 + n2; break;
+                case '-': result = n1 - n2; break;
+                case '*': result = n1 * n2; break;
+                case '/': result = (n1 / n2).toFixed(0); break;
+                default: return 'err';
+            }
+            return result;
+        }
+        /* 呼叫函式 */
+        var ans = fun5(10, 3, '+');
+        /* 檢查是否非四則運算 */
+        if (ans != 'err') {
+            /* 檢查為奇數或偶數 */
+            if (ans % 2 == 1) {
+                console.log(`${ans}為奇數`);
+            } else {
+                console.log(`${ans}為偶數`);
+            }
+        } else {
+            console.log('err');
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

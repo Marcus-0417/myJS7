@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = 11;
+        while (a < 10) {
+            a++;
+        }
+        console.log(`a=${a}`); /* a=11 */
+
+        var b = 11;
+        do {
+            b++;
+        } while (b < 10);
+        console.log(`b=${b}`); /* b=12 */
+
+        /* 方法一 */
+        while (true) {
+            var score = prompt('請輸入分數');
+            if (score == null) {
+                break;
+            }
+        }
+
+        /* 方法二 */
+        var score = '';
+        while (score != null) {
+            score = prompt('請輸入分數');
+        }
+
+        /* 方法三 */
+        do {
+            var score = prompt('請輸入分數');
+            // if (score == null) {
+            //     break;
+            // }
+        } while (score != null);
+
+        /* 使用for */
+        for (var a = 1; a < 100; a++) {
+            var score = prompt('請輸入分數');
+            if (score == null) {
+                break;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

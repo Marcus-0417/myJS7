@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 巢狀迴圈 -->
+    <!-- *
+          **
+          ***
+          ****
+          *****
+    -->
+    <script>
+        /* 外迴圈控制行數 */
+        for (var a = 1; a <= 5; a++) {
+            /* 内迴圈控制每行*數量 */
+            for (var b = 1; b <= a; b++) {
+                document.write('*');
+            }
+            /* 每次迴圈結束換行 */
+            document.write('<br>');
+        }
+
+        /* 外迴圈控制行數 */
+        for (var a = 4; a >= 1; a--) {
+            /* 内迴圈控制每行*數量 */
+            for (var b = 1; b <= a; b++) {
+                document.write('*');
+            }
+            /* 每次迴圈結束換行 */
+            document.write('<br>');
+        }
+
+    </script>
+</body>
+
+</html>

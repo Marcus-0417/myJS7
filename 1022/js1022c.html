@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1+2+3+...+10 -->
+    <script>
+        // var s = 0;
+        // s = s + 1; /* s=0+1=1 */
+        // s = s + 2; /* s=1+2=3 */
+        // s = s + 3; /* s=3+3=6 */
+        // s = s + 4; /* s=6+4=10 */
+        // s = s + 5; /* s=10+5=15 */
+        // s = s + 6; /* s=15+6=21 */
+        // s = s + 7; /* s=21+7=28 */
+        // s = s + 8; /* s=28+8=36 */
+        // s = s + 9; /* s=36+9=45 */
+        // s = s + 10; /* s=45+10=55 */
+
+        // var s = 0;
+        // for (var a = 1; a <= 100; a++) {
+        //     s = s + a;
+        // }
+        // console.log(`1~${a-1}的總和為${s}`);
+
+        // 1~100中3的倍數總和
+        var s = 0;
+        for (var a = 1; a <= 100; a++) {
+            if (a % 3 === 0) {
+                s = s + a;
+            }
+        }
+        console.log(`1~${a-1}中3的倍數總和為${s}`);
+
+        // 100~100中3的倍數總和
+        var s = 0;
+        for (var a = 100; a >= 1; a--) {
+            if (a % 3 === 0) {
+                s = s + a;
+            }
+        }
+        console.log(`100~${a+1}中3的倍數總和為${s}`);
+
+
+    </script>
+</body>
+
+</html>
