@@ -10,16 +10,51 @@
 <body>
     <p id="p1"></p>
     <script>
-        /* 1. 建立一個函式，傳參數r */
-        /* 輸入半徑r，算出面積=圓周率(3.14*r*r)*半徑*半徑 */
-        /* 回傳面積結果在頁面上的指定段落1 */
-        /* 半徑：?，圓面積：? */
-        function area(r) {
-            return 3.14 * r * r;
+        // /* 1. 建立一個函式，傳參數r */
+        // /* 輸入半徑r，算出面積=圓周率(3.14*r*r)*半徑*半徑 */
+        // /* 回傳面積結果在頁面上的指定段落1 */
+        // /* 半徑：?，圓面積：? */
+        // function area(r) {
+        //     // return 3.14 * r * r;
+        //     return (Math.PI * Math.pow(r, 2)).toFixed(2);
+        // }
+        // var p1 = document.getElementById('p1');
+        // var inputR = 5;
+        // p1.innerHTML = `半徑：${inputR}, 圓面積：${area(inputR)}`;
+
+        /* 建立計算BMI函式 */
+        /* 需要兩個參數(身高h、體重w) */
+        function getBMI(h,w) {
+            /* 將BMI結果傳送出去 */
+            // return (w/((h/100)*(h/100))).toFixed(1);
+            return (w / Math.pow(h / 100, 2)).toFixed(1);
         }
+
+        /* 呼叫BMI函式，並傳值 */
+        /* 接收到BMI結果後，依序檢查BMI狀態 */
+        var myBMI = getBMI(157,50);
+        /* 取得顯示BMI結果的目標 */
         var p1 = document.getElementById('p1');
-        var inputR = 5;
-        p1.innerHTML = `半徑：${inputR}, 圓面積：${area(inputR)}`;
+        /* 存放狀態的變數 */
+        var str1 = '';
+
+        /* BMI<18.5 體重過輕/18.5<=BMI<24 正常範圍/24<=BMI 異常範圍 */
+        if (myBMI < 18.5) {
+            // var p1 = document.getElementById('p1');
+            // p1.innerHTML = `BMI：${myBMI} 體重過輕`;
+            str1 = '體重過輕';
+        } else if (18.5 <= myBMI && myBMI < 24) {
+            // var p1 = document.getElementById('p1');
+            // p1.innerHTML = `BMI：${myBMI} 正常範圍`;
+            str1 = '正常範圍';
+        } else if (24 <= myBMI) {
+            // var p1 = document.getElementById('p1');
+            // p1.innerHTML = `BMI：${myBMI} 異常範圍`;
+            str1 = '異常範圍';
+        }
+
+        p1.innerHTML = `BMI：${myBMI} ${str1}`;
+
     </script>
 </body>
 

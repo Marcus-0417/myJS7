@@ -16,58 +16,58 @@
         /* BMI<18.5 過輕/18.5<=BMI<24 正常/24<=BMI 異常 */
 
         /* 傳統函式 */
-        // function BMI() {
-        //     return w / (h * h * 0.0001);
+        // function a() {
+        //     var h = prompt('請輸入身高');
+        //     var w = prompt('請輸入體重');
+        //     var BMI = (w / (h * h * 0.0001)).toFixed(0);
+        //     if (BMI < 18.5) {
+        //         document.getElementById('p1')
+        //         p1.innerHTML = 'BMI：' + BMI + '過輕';
+        //     } else if (18.5 <= BMI && BMI < 24) {
+        //         document.getElementById('p1')
+        //         p1.innerHTML = 'BMI：' + BMI + '正常';
+        //     } else if (24 <= BMI) {
+        //         document.getElementById('p1')
+        //         p1.innerHTML = 'BMI：' + BMI + '異常';
+        //     }
         // }
-        // var h = prompt('請輸入身高');
-        // var w = prompt('請輸入體重');
-        // var BMI = (w / (h * h * 0.0001)).toFixed(2);
-        // if (BMI < 18.5) {
-        //     document.getElementById('p1')
-        //     p1.innerHTML = 'BMI：' + BMI + '過輕';
-        // } else if (18.5 <= BMI && BMI < 24) {
-        //     document.getElementById('p1')
-        //     p1.innerHTML = 'BMI：' + BMI + '正常';
-        // } else if (24 <= BMI) {
-        //     document.getElementById('p1')
-        //     p1.innerHTML = 'BMI：' + BMI + '異常';
-        // }
+        // a();
 
         /* 匿名函式 */
-        // var BMI = function () {
-        //     return w / (h * h * 0.0001);
+        // var b = function () {
+        //     var h = prompt('請輸入身高');
+        //     var w = prompt('請輸入體重');
+        //     var BMI = (w / (h * h * 0.0001)).toFixed(0);
+        //     if (BMI < 18.5) {
+        //         document.getElementById('p1')
+        //         p1.innerHTML = 'BMI：' + BMI + '過輕';
+        //     } else if (18.5 <= BMI && BMI < 24) {
+        //         document.getElementById('p1')
+        //         p1.innerHTML = 'BMI：' + BMI + '正常';
+        //     } else if (24 <= BMI) {
+        //         document.getElementById('p1')
+        //         p1.innerHTML = 'BMI：' + BMI + '異常';
+        //     }
         // }
-        // var h = prompt('請輸入身高');
-        // var w = prompt('請輸入體重');
-        // var BMI = (w / (h * h * 0.0001)).toFixed(2);
-        // if (BMI < 18.5) {
-        //     document.getElementById('p1')
-        //     p1.innerHTML = 'BMI：' + BMI + '過輕';
-        // } else if (18.5 <= BMI && BMI < 24) {
-        //     document.getElementById('p1')
-        //     p1.innerHTML = 'BMI：' + BMI + '正常';
-        // } else if (24 <= BMI) {
-        //     document.getElementById('p1')
-        //     p1.innerHTML = 'BMI：' + BMI + '異常';
-        // }
+        // b();
 
         /* 箭頭函式 */
-        var BMI = () => {
-            // return w / (h * h * 0.0001);
+        var c = () => {
+            var h = prompt('請輸入身高');
+            var w = prompt('請輸入體重');
+            var BMI = (w / (h * h * 0.0001)).toFixed(0);
+            if (BMI < 18.5) {
+                document.getElementById('p1')
+                p1.innerHTML = 'BMI：' + BMI + '過輕';
+            } else if (18.5 <= BMI && BMI < 24) {
+                document.getElementById('p1')
+                p1.innerHTML = 'BMI：' + BMI + '正常';
+            } else if (24 <= BMI) {
+                document.getElementById('p1')
+                p1.innerHTML = 'BMI：' + BMI + '異常';
+            }
         }
-        var h = prompt('請輸入身高');
-        var w = prompt('請輸入體重');
-        var BMI = (w / (h * h * 0.0001)).toFixed(2);
-        if (BMI < 18.5) {
-            document.getElementById('p1')
-            p1.innerHTML = 'BMI：' + BMI + '過輕';
-        } else if (18.5 <= BMI && BMI < 24) {
-            document.getElementById('p1')
-            p1.innerHTML = 'BMI：' + BMI + '正常';
-        } else if (24 <= BMI) {
-            document.getElementById('p1')
-            p1.innerHTML = 'BMI：' + BMI + '異常';
-        }
+        c();
     </script>
 </body>
 
