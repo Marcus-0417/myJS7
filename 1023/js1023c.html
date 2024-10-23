@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="p1"></p>
+    <script>
+        /* 1. 建立一個函式，傳參數r */
+        /* 輸入半徑r，算出面積=圓周率(3.14*r*r)*半徑*半徑 */
+        /* 回傳面積結果在頁面上的指定段落1 */
+        /* 半徑：?，圓面積：? */
+        function area(r) {
+            return 3.14 * r * r;
+        }
+        var p1 = document.getElementById('p1');
+        var inputR = 5;
+        p1.innerHTML = `半徑：${inputR}, 圓面積：${area(inputR)}`;
+    </script>
+</body>
+
+</html>

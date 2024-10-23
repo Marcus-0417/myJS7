@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="myP1">我是段落</p>
+    <button onclick="change3()">更換段落內容</button>
+
+    <script>
+        /* 傳統函式寫法 */
+        function change1() {
+            /* 取得段落myP1 */
+            var p1 = document.getElementById('myP1');
+            /* 更換段落內容 */
+            p1.innerHTML = '我是更改後的段落1';
+        }
+
+        /* 匿名函式寫法 */
+        var change2 = function () {
+            /* 取得段落myP1 */
+            var p1 = document.getElementById('myP1');
+            /* 更換段落內容 */
+            p1.innerHTML = '我是更改後的段落2';
+        }
+
+        /* 箭頭函式寫法 */
+        var change3 = () => {
+            /* 取得段落myP1 */
+            var p1 = document.getElementById('myP1');
+            /* 更換段落內容 */
+            p1.innerHTML = '我是更改後的段落3';
+        }
+    </script>
+
+    <p id="entryTime"></p>
+    <button onclick="getTime()">取得日期時間</button>
+    <script>
+        function getTime() {
+            /* 取得顯示日期時間的目標 */
+            var entryTime = document.getElementById('entryTime');
+            /* 顯示日期時間在目標上 */
+            entryTime.innerHTML = new Date().toLocaleString();
+        }
+    </script>
+
+
+
+    <p id="myP2">1</p>
+    <button>+</button>
+    <button>-</button>
+</body>
+
+</html>
