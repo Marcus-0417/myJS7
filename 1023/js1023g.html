@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>終極密碼</p>
+    <p id="ans">亂數值：</p>
+    <hr>
+    <p id="result"></p>
+    <script>
+        /* 亂數 0~1 之間的值 */
+
+        console.log(Math.floor(Math.random() * 3) + 1);    /* 0~2 */
+        console.log(Math.floor(Math.random() * 5) + 1);    /* 0~4 */
+        console.log(Math.floor(Math.random() * 10) + 1);   /* 0~9 */
+
+        /* 取亂數函式 */
+        function getRandom(min, max) {
+            /* 取亂數 */
+            var a = Math.floor(Math.random() * max) + min;
+            /* 顯示亂數 */
+            console.log(`${min}~${max}之間的亂數值為${a}`);
+            return a;
+        }
+
+        /* 呼叫亂數函式 */
+        for (var i = 1; i <= 6; i++) {
+            getRandom(1, 49);
+        }
+
+        var ans= document.getElementById('ans');
+        var bingo=getRandom(1, 100);
+        alert(bingo);
+        ans.innerHTML =ans.innerHTML + bingo;
+        var times = 0;
+
+        while (true) {
+            var input=(prompt('請輸入1~100之間的數字'));
+            var guess = Number(prompt('請輸入1~100之間的數字'));
+            times++;
+        }
+    
+    </script>
+</body>
+
+</html>

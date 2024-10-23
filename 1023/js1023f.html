@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>終極密碼</title>
+</head>
+
+<body>
+    <p>終極密碼</p>
+    <p id="randomNumber">亂數值：</p>
+    <hr>
+    <p id="result"></p>
+    <script>
+
+        var randomNumber = Math.floor(Math.random() * 100) + 1;
+        var times = 0;
+        var guess;
+        var min = 1;
+        var max = 100;
+
+        console.log("終極密碼遊戲開始")
+
+        document.getElementById("randomNumber").innerHTML = `亂數值：${randomNumber}`;
+
+        while (guess != randomNumber) {
+            guess = Number(prompt("請輸入1~100之間的數字:"));
+            times++;
+
+            if (isNaN(guess)) {
+                alert("輸入數字阿87!!!");
+                continue;
+            }
+            if (guess < min || guess > max) {
+                alert("超出範圍!!!");
+            }
+            else if (guess < randomNumber) {
+                alert(`太小嚕！提示：${guess}~${max}`);
+                min = guess;
+            }
+            else if (guess > randomNumber) {
+                alert(`太大嚕！提示：${min}~${guess}`);
+                max = guess;
+            } else {
+                alert(`恭喜！你猜對了！正確的數字是 ${randomNumber}，總共猜了 ${times} 次。`);
+                document.getElementById("result").innerHTML = `恭喜！你猜對了！正確的數字是 ${randomNumber}，總共猜了 ${times} 次。`;
+            }
+        }
+    </script>
+</body>
+
+</html>

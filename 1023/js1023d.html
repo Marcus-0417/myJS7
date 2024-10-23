@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="count">1</p>
+    <button onclick="plus()">+1</button>
+    <button onclick="minus()">-1</button>
+    <br><br>
+    <button onclick="getCount('+')">+1</button>
+    <button onclick="getCount('-')">-1</button>
+
+    <script>
+        /* 共同使用同一個函式處理+1-1 */
+        function getCount(op) {
+            var count = document.getElementById('count');
+            if (op == '+') {
+                count.innerHTML = Number(count.innerHTML) + 1;
+            } else if (op == '-') {
+                count.innerHTML = Number(count.innerHTML) - 1;
+            }
+        }
+
+        var a = document.getElementById("count")
+        var plus = function () {
+            a.innerHTML = Number(a.innerHTML) + 1; /* 可以用+取代Number */
+        }
+
+        var minus = function () {
+            a.innerHTML = Number(a.innerHTML) - 1;
+        }
+
+    </script>
+
+</body>
+
+</html>
