@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 找出陣列最大與最小值 -->
+    <script>
+        var arr1 = [5, 60, 3, "123", 90, true, 33, 1, 100];
+        console.log(arr1);
+        /* 去除非數值的陣列資料，保留數值資料 */
+        arr1 = arr1.filter((data) => {
+            if (typeof data === "number") {
+                return data;
+            }
+        })
+        console.log(arr1);
+
+        /* 去除非數值的陣列資料，保留數值資料給arr2 */
+        var arr2 = arr1.filter((data) => {
+            if (typeof data === "number") {
+                return data;
+            }
+        })
+        console.log(arr2);
+
+        var max = arr2[0];
+        var min = arr2[0];
+
+        for (var i = 0; i < arr2.length; i++) {
+            // if(typeof arr1[i] == "string" || typeof arr1[i] == "boolean"){
+            //     continue; /* 忽略&繼續 */
+            // }
+            if (typeof arr2[i] === "number") {
+                if (max < arr2[i]) {
+                    max = arr2[i];
+                } else if (min > arr2[i]) {
+                    min = arr2[i];
+                }
+            }
+        }
+        document.write(`陣列最大值為${max}, 最小值為${min}`);
+        document.write('<hr>');
+
+        for (var a of arr2) {
+            if (max < a) {
+                max = a;
+            }
+            if (min > a) {
+                min = a;
+            }
+        }
+        document.write(`陣列最大值為${max}, 最小值為${min}`);
+        document.write('<hr>');
+
+        arr2.forEach((b) => {
+            if (max < b) {
+                max = b;
+            }
+            if (min > b) {
+                min = b;
+            }
+        })
+        document.write(`陣列最大值為${max}, 最小值為${min}`);
+        document.write('<hr>');
+
+        arr2.map((c) => {
+            if (max < c) {
+                max = c;
+            }
+            if (min > c) {
+                min = c;
+            }
+        });
+        document.write(`陣列最大值為${max}, 最小值為${min}`);
+
+        /* 交換變數練習 */
+        var a = 5;
+        var b = 3;
+        var c = a; /* c=5 */
+
+        a = b; /* a=3 */
+        b = c; /* b=5 */
+        c = a; /* c=3 */
+
+    </script>
+</body>
+
+</html>

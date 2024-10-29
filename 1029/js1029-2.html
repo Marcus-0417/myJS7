@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 顯示陣列中字串的值 =>typeof */
+        var arr1 = [1, 2, 3, 4, 5, "12345"];
+
+        /* 方法一 for */
+        for (var i = 0; i < arr1.length; i++) {
+            document.write(arr1[i] + "是" + typeof arr1[i] + '<br>');
+        }
+        document.write('<hr>');
+
+        /* 方法二 for of */
+        for (var a of arr1) {
+            document.write(a + "是" + typeof a + '<br>');
+        }
+        document.write('<hr>');
+
+        /* 方法三 forEach */
+        arr1.forEach((b) => {
+            document.write(b + "是" + typeof b + '<br>');
+        })
+        document.write('<hr>');
+
+        /* 方法四 map */
+        arr1.map((c) => {
+            document.write(c + "是" + typeof c + '<br>');
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 建立一維陣列 */
+        var books = ["HTML", "CSS", "JavaScript"];
+        console.log(books);
+        console.log(typeof books);
+
+        /* 讀取指定編號的陣列值 => 陣列名稱[陣列編號] */
+        console.log(books[1]);
+        console.log(books[3]); /* 超過索引範圍(陣列編號)所以回傳undefined */
+
+        /* 改變陣列中現有的值 */
+        books[2] = "JS";
+        console.log(books[2]);
+
+        /* 寫入陣列中不存在的編號是允許的，但只能寫在最後面 */
+        books[3] = "abc";
+        console.log(books[3]);
+
+        /* 取得陣列長度 */
+        console.log(books.length);
+
+        /* 取出陣列所有值 */
+        /* 方法一 for */
+        for (var i = 0; i < books.length; i++) {
+            document.write(books[i]+'<br>');
+        }
+        // for (var i in books) {
+        //     document.write(books[i]+'<br>');
+        // }
+        document.write('<hr>');
+
+        /* 方法二 for of */
+        for(var a of books){
+            document.write(a+'<br>');
+        }
+        document.write('<hr>');
+
+        /* 方法三 for each */
+        books.forEach((b)=>{
+            document.write(b+'<br>')
+        });
+        document.write('<hr>');
+
+        /* 方法四 map */
+        books.map((c)=>{
+            document.write(c+'<br>')
+        });
+
+    </script>
+</body>
+
+</html>

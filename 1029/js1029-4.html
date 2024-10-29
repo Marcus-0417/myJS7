@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 使用filter方法找出陣列中的奇數後*2 */
+        /* 結果：[10, 6, 66, 2] */
+        var arr1 = [5, 60, 3, "123", 90, true, 33, 1, 100];
+        arr2 = arr1.filter((data) => {
+            if (typeof data === "number") {
+                if (data % 2 === 1) {
+                    return data
+                }
+            }
+        })
+        console.log(arr2);
+
+        var double = arr2.map(data => data * 2)
+        document.write(double)
+
+
+        /* 老師的方法一 */
+        // var str1='';
+        // for(var i=0;i<arr1.length;i++){
+        //     if(typeof arr1[i] == "number"){
+        //         if(arr1[i]%2!=0){
+        //             str1=str1+arr1[i]*2+',';
+        //         }
+        //     }
+        // }
+        // document.write(str1);
+
+        // /* 老師的方法二 */
+        // var arr2 =[];
+        // /* 找出數值的奇數*2 */
+        // for(var i=0;i<arr1.length;i++){
+        //     if(typeof arr1[i] === "number"){
+        //         if(arr1[i]%2!=0){
+        //             arr2[i]=arr1[i]*2;
+        //         }
+        //     }
+        // }
+        // console.log(arr2);
+        // /* 去除非數值的資料 */
+        // arr2=arr2.filter((data)=>{
+        //     if(typeof data === "number"){
+        //         return data;
+        //     }
+        // })
+        // console.log(arr2);
+
+    </script>
+</body>
+
+</html>
