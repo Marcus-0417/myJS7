@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr1 = [1, 5, 100, 3, 30];
+        /* 陣列排序 */
+        console.log(`排序前：${arr1}`);
+        /* 遞增排序 */
+        arr1.sort((a, b) => a - b);
+        console.log(`遞增排序後：${arr1}`);
+        /* 遞減排序 */
+        arr1.sort((a, b) => b - a);
+        console.log(`遞減排序後：${arr1}`);
+
+        /* 反轉方法遞減 */
+        console.log(`反轉方法排序後：${arr1.reverse()}`);
+
+    </script>
+</body>
+
+</html>

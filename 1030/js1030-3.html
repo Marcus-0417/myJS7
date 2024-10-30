@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr1 = [1, 5, 100, 5, 3, 30, 5, 90];
+        console.log(arr1);
+        console.log(`第一個5的位置 => ${arr1.indexOf(5)}`);
+        console.log(`最後一個5的位置 => ${arr1.lastIndexOf(99)}`);/* 不存在會顯示-1 */
+        console.log(`5是否存在 => ${arr1.includes(5)}`);
+
+        /* 找出5的位置 */
+        if (arr1.includes(5)) {
+            arr1.map((n1, index) => {
+                if (n1 === 5) {
+                    console.log(index);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

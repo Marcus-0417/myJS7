@@ -13,35 +13,37 @@
         /* 結果：[10, 6, 66, 2] */
         var arr1 = [5, 60, 3, "123", 90, true, 33, 1, 100];
         arr2 = arr1.filter((data) => {
-            if (typeof data === "number") {
-                if (data % 2 === 1) {
-                    return data
-                }
+            if (typeof data === "number" && data % 2 != 0) {
+                // if (typeof data === "number") {
+                // if (data % 2 === 1) {
+                return data;
             }
-        })
+        }
+        )
         console.log(arr2);
 
         var double = arr2.map(data => data * 2)
-        document.write(double)
+        document.write(double);
+        document.write('<hr>');
 
 
         /* 老師的方法一 */
-        // var str1='';
-        // for(var i=0;i<arr1.length;i++){
-        //     if(typeof arr1[i] == "number"){
-        //         if(arr1[i]%2!=0){
-        //             str1=str1+arr1[i]*2+',';
-        //         }
-        //     }
-        // }
-        // document.write(str1);
+        var str1 = '';
+        for (var i = 0; i < arr1.length; i++) {
+            if (typeof arr1[i] === "number" && arr1[i] % 2 != 0) {
+            /* if(typeof arr1[i] === "number"){ 
+                if(arr1[i]%2!=0) */{
+                    str1 = str1 + arr1[i] * 2 + ',';
+                }
+            }
+        }
+        document.write(str1);
 
         // /* 老師的方法二 */
         // var arr2 =[];
         // /* 找出數值的奇數*2 */
         // for(var i=0;i<arr1.length;i++){
-        //     if(typeof arr1[i] === "number"){
-        //         if(arr1[i]%2!=0){
+        //     if(typeof arr1[i] === "number" && arr1[i] % 2 != 0){
         //             arr2[i]=arr1[i]*2;
         //         }
         //     }
@@ -54,6 +56,18 @@
         //     }
         // })
         // console.log(arr2);
+
+        /* 老師的方法三 */
+        var odds = arr1.filter((a) => {
+            if (typeof a === "number" && a % 2 != 0) {
+                return true;
+            }
+        });
+        console.log(odds);
+        odds = odds.map((b) => {
+            return b * 2;
+        });
+        console.log(odds);
 
     </script>
 </body>
