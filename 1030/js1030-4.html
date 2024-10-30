@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         /* 大樂透1~6號 */
         var winNum = [];
         while (winNum.length < 6) {
             var num = Math.floor(Math.random() * 49 + 1);
-            if (winNum.includes(num)!=true) {
+            if (winNum.includes(num) != true) {
                 winNum.push(num);
             }
         }
@@ -30,4 +32,5 @@
 
     </script>
 </body>
+
 </html>
