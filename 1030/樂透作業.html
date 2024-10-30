@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="lottery1()">大樂透開獎</button>
+    <button onclick="lottery2()">威力彩開獎</button>
+    <button onclick="lottery3()">今彩539開獎</button>
+    <script>
+        /* 用function呼叫大樂透 */
+        function lottery1() {
+            /* 大樂透 */
+            var winNum = [];
+            while (winNum.length < 6) {
+                var num = Math.floor(Math.random() * 49 + 1);
+                if (winNum.includes(num) != true) {
+                    winNum.push(num);
+                }
+            }
+
+            var specialNum = 0;
+            do {
+                specialNum = Math.floor(Math.random() * 49 + 1);
+            } while (winNum.includes(specialNum));
+
+            /* 顯示並遞增排序中獎號碼 */
+            winNum.sort((a, b) => a - b);
+            document.write(`本期中獎號碼為：${winNum}`);
+            document.write('<hr>');
+            document.write(`特別號為：${specialNum}`);
+        }
+
+        function lottery2() {
+            /* 威力彩 */
+            var winNum = [];
+            while (winNum.length < 6) {
+                var num = Math.floor(Math.random() * 38 + 1);
+                if (winNum.includes(num) != true) {
+                    winNum.push(num);
+                }
+            }
+
+            var specialNum = 0;
+            do {
+                specialNum = Math.floor(Math.random() * 8 + 1);
+            } while (winNum.includes(specialNum));
+
+            /* 顯示並遞增排序中獎號碼 */
+            winNum.sort((a, b) => a - b);
+            document.write(`本期中獎號碼為：${winNum}`);
+            document.write('<hr>');
+            document.write(`特別號為：${specialNum}`);
+        }
+
+
+        function lottery3() {
+            /* 今彩539 */
+            var winNum = [];
+            while (winNum.length < 5) {
+                var num = Math.floor(Math.random() * 39 + 1);
+                if (winNum.includes(num) != true) {
+                    winNum.push(num);
+                }
+            }
+
+            /* 顯示並遞增排序中獎號碼 */
+            winNum.sort((a, b) => a - b);
+            document.write(`本期中獎號碼為：${winNum}`);
+        }
+
+    </script>
+</body>
+
+</html>

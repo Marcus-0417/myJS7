@@ -20,6 +20,11 @@
 
         /* 加入特別號 */
         var specialNum = 0;
+        // specialNum = Math.floor(Math.random() * 49 + 1); // 先生成一次
+
+        // while (winNum.includes(specialNum)) {
+        //     specialNum = Math.floor(Math.random() * 49 + 1); // 如果特殊號碼已存在，則重新生成
+        // }
         do {
             specialNum = Math.floor(Math.random() * 49 + 1);
         } while (winNum.includes(specialNum));
@@ -29,6 +34,39 @@
         document.write(`本期中獎號碼為：${winNum}`);
         document.write('<hr>');
         document.write(`特別號為：${specialNum}`);
+
+        /* 老師的方法 */
+        var lottery = [];
+        for (var i = 0; i < 6; i++) {
+            // 隨機生成1~49的亂數
+            var no = Math.floor(Math.random() * 49) + 1;
+            if (lottery.includes(no)) {
+                /* 有找到 => 重複 */
+                i--; /* i=i-1 */
+                continue;
+            } else {
+                /* 沒找到 => 沒有重複 */
+                lottery[i] = no;
+            }
+        }
+        lottery.sort((a, b) => a - b);
+        console.log(lottery);
+        console.log(`中獎號碼為：${lottery}`);
+
+        /* 1-49產生1個特別號(不可以跟前6個號碼重複) */
+        while(true) {
+            var sno = Math.floor(Math.random() * 49) + 1;
+            if (lottery.includes(sno)) {
+                /* 有找到 => 重複 */
+                continue;
+            } else {
+                /* 沒找到 => 沒有重複 */
+                lottery.push(sno);
+                break;
+            }
+        }
+        console.log(`特別號為：${lottery[lottery.length - 1]}`); 
+        console.log(`特別號為：${sno}`);
 
     </script>
 </body>
