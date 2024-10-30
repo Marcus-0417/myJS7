@@ -54,7 +54,7 @@
         console.log(`中獎號碼為：${lottery}`);
 
         /* 1-49產生1個特別號(不可以跟前6個號碼重複) */
-        while(true) {
+        while (true) {
             var sno = Math.floor(Math.random() * 49) + 1;
             if (lottery.includes(sno)) {
                 /* 有找到 => 重複 */
@@ -65,7 +65,7 @@
                 break;
             }
         }
-        console.log(`特別號為：${lottery[lottery.length - 1]}`); 
+        console.log(`特別號為：${lottery[lottery.length - 1]}`);
         console.log(`特別號為：${sno}`);
 
     </script>

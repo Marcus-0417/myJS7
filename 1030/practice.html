@@ -8,7 +8,6 @@
 </head>
 
 <body>
-
     <button onclick="lottery('大樂透')">大樂透開獎</button>
     <button onclick="lottery('威力彩')">威力彩開獎</button>
     <button onclick="lottery('今彩539')">今彩539開獎</button>
@@ -43,9 +42,7 @@
                             winNum.push(num);
                         }
                     }
-                    do {
-                        specialNum = Math.floor(Math.random() * specialMaxNum) + 1;
-                    } while (winNum.includes(specialNum));
+                    var specialNum = Math.floor(Math.random() * 8 + 1);
                     break;
 
                 case '今彩539':
@@ -61,7 +58,7 @@
                 default:
                     return;
             }
-    
+        
         winNum.sort((a, b) => a - b);
         document.write(`本期中獎號碼為：${winNum}`);
         document.write('<hr>');

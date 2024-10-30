@@ -45,10 +45,7 @@
                 }
             }
 
-            var specialNum = 0;
-            do {
-                specialNum = Math.floor(Math.random() * 8 + 1);
-            } while (winNum.includes(specialNum));
+            var specialNum = Math.floor(Math.random() * 8 + 1);
 
             /* 顯示並遞增排序中獎號碼 */
             winNum.sort((a, b) => a - b);
@@ -56,7 +53,6 @@
             document.write('<hr>');
             document.write(`特別號為：${specialNum}`);
         }
-
 
         function lottery3() {
             /* 今彩539 */

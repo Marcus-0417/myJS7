@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 建立一個通用的函示可以產生號碼 */
+        /* 參數預設值 */
+        function getLotteryNum(lotteryName, count, max, secFlag, secMax = 0) {
+            var lottery = [];
+            /* 第一區號碼 */
+            for (var i = 0; i < count; i++) {
+                // 隨機生成1~49的亂數
+                var no = Math.floor(Math.random() * max) + 1;
+                if (lottery.includes(no)) {
+                    /* 有找到 => 重複 */
+                    i--; /* i=i-1 */
+                    continue;
+                } else {
+                    /* 沒找到 => 沒有重複 */
+                    lottery[i] = no;
+                }
+            }
+            console.log(`${lotteryName}第一區號碼為：${lottery}`);
+
+            /* 第二區號碼 */
+            if (secFlag === 'Y') {
+                while (true) {
+                    var sno = Math.floor(Math.random() * secMax) + 1;
+                    if(lotteryName === '威力彩') {
+                        break;
+                    }
+                    if (lotteryName === '大樂透') {
+                        if (lottery.includes(sno)) {
+                            /* 有找到 => 重複 */
+                            continue;
+                        } else {
+                            /* 沒找到 => 沒有重複 */
+                            lottery.push(sno);
+                            break;
+                        }
+                    } 
+                }
+                console.log(`${lotteryName}特別號為：${sno}`);
+            }
+        }
+
+        var gameNo = window.prompt("請輸入樂透代號：1=大樂透 2=威力彩 3=今彩539");
+
+        if (gameNo == 1) {
+            /* 產生大樂透號碼 */
+            getLotteryNum('大樂透', 6, 49, 'Y', 49);
+        } else if (gameNo == 2) {
+            /* 產生威力彩號碼 */
+            getLotteryNum('威力彩', 6, 38, 'Y', 8);
+        } else if (gameNo == 3) {
+            /* 產生今彩539號碼 */
+            getLotteryNum('今彩539', 5, 39, 'N');
+        } else {
+            alert("輸入錯誤");
+            location.reload(); /* 重新載入頁面 */
+        }
+
+    </script>
+</body>
+
+</html>
