@@ -21,32 +21,32 @@
     </script> -->
 <script>
     // 隨機生成 6 個不重複的中獎號碼
-    var winningNumbers = [];
-    while (winningNumbers.length < 6) {
+    var win = [];
+    while (win.length < 6) {
         var num = Math.floor(Math.random() * 48 + 1);
-        if (!winningNumbers.includes(num)) {
-            winningNumbers.push(num);
+        if (!win.includes(num)) {
+            win.push(num);
         }
     }
 
     // 讓使用者輸入 6 個號碼
-    var bingo = [];
-    while (bingo.length < 6) {
-        var input = prompt("請輸入第 " + (bingo.length + 1) + " 個號碼（1-49）:");
+    var enter = [];
+    while (enter.length < 6) {
+        var input = prompt("請輸入第 " + (enter.length + 1) + " 個號碼（1-49）:");
         var guess = parseInt(input);
-        if (guess >= 1 && guess <= 49 && !bingo.includes(guess)) {
-            bingo.push(guess);
+        if (guess >= 1 && guess <= 49 && !enter.includes(guess)) {
+            enter.push(guess);
         } else {
             alert("請輸入有效且不重複的號碼！");
         }
     }
 
     // 顯示中獎號碼與使用者號碼
-    document.write("本期大樂透開獎號碼: " + winningNumbers.join(", ") + "<br>");
-    document.write("您輸入的號碼: " + bingo.join(", ") + "<br>");
+    document.write("本期大樂透開獎號碼: " + win.join(", ") + "<br>");
+    document.write("您輸入的號碼: " + enter.join(", ") + "<br>");
 
     // 判斷中獎
-    var matchedNumbers = bingo.filter(num => winningNumbers.includes(num));
+    var matchedNumbers = enter.filter(num => win.includes(num));
     if (matchedNumbers.length > 0) {
         document.write("恭喜！您中獎了！中獎號碼: " + matchedNumbers.join(", "));
     } else {

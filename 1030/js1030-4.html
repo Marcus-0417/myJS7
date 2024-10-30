@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 大樂透1~6號 */
+        var winNum = [];
+        while (winNum.length < 6) {
+            var num = Math.floor(Math.random() * 49 + 1);
+            if (winNum.includes(num)!=true) {
+                winNum.push(num);
+            }
+        }
+
+        /* 加入特別號 */
+        var specialNum = 0;
+        do {
+            specialNum = Math.floor(Math.random() * 49 + 1);
+        } while (winNum.includes(specialNum));
+
+        /* 顯示並遞增排序中獎號碼 */
+        winNum.sort((a, b) => a - b);
+        document.write(`本期中獎號碼為：${winNum}`);
+        document.write('<hr>');
+        document.write(`特別號為：${specialNum}`);
+
+    </script>
+</body>
+</html>
