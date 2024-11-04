@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var score = prompt("請輸入分數");
+
+        if (score >= 80 && score <= 100) {
+            alert("等級A");
+        } else if (score >= 70 && score < 80) {
+            alert("等級B");
+        } else if (score >= 60 && score < 70) {
+            alert("等級C");
+        } else if (score >= 0 && score < 60) {
+            alert("等級D");
+            location.reload(); /* 重新載入頁面 */
+        } else {
+            alert("err!分數範圍 0-100");
+            location.reload(); /* 重新載入頁面 */
+        }
+
+    </script>
+</body>
+
+</html>

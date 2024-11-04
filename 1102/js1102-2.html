@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var num = prompt("請輸入任意數");
+        if (num >= 0) {
+            if (num % 2 == 0) {
+                alert("正偶數");
+            } else {
+                alert("正奇數");
+            } location.reload(); /* 重新載入頁面 */
+        } else if (num < 0) {
+            if (num % 2 == 0) {
+                alert("負偶數");
+            } else {
+                alert("負奇數");
+            } location.reload(); /* 重新載入頁面 */
+        } else {
+            alert("輸入錯誤");
+            location.reload(); /* 重新載入頁面 */
+        }
+    </script>
+</body>
+
+</html>

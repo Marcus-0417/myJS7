@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var num = parseInt(prompt("請輸入任意數"));
+        var count = 0;
+        var lineCount = 0;
+
+        document.write("可以被 " + num + " 整除的數有：<br>");
+        
+        for (var i = 1; i <= 100; i++) {
+            if (i % num === 0) {
+                document.write(i + " , ");
+                count++;
+                lineCount++;
+
+                // 每 5 個數換行
+                if (lineCount === 5) {
+                    document.write("<br>");
+                    lineCount = 0;
+                }
+            }
+        }
+
+        document.write('<hr>');
+        document.write("1-100 有"+ count + "個整數可以被 " + num + " 整除");
+    </script>
+</body>
+
+</html>
