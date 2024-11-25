@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>文件物件模型 - DOM</h1>
+    <hr>
+    <form action="">
+        請選擇選修的科目：
+        <input name="subjects" type="checkbox" value="html">HTML
+        <input name="subjects" type="checkbox" value="css">CSS
+        <input name="subjects" type="checkbox" value="js">JavaScript
+        <!-- 綁定事件 -->
+        <input type="button" onclick="getSubjects()" value="送出">
+        <!-- 監聽事件 -->
+        <input id="button1" type="button" value="送出1">
+    </form>
+
+    <script>
+        var subjects = document.getElementsByName('subjects');
+
+        /* 顯示全部核取方塊的內容 > value */
+        for (var i = 0; i < subjects.length; i++) {
+            console.log(subjects[i].value);
+        }
+
+        function getSubjects() {
+            /* 顯示被選取(checked)的核取方塊的內容 > value */
+            for (var i = 0; i < subjects.length; i++) {
+                if (subjects[i].checked) {
+                    console.log(subjects[i].value);
+                }
+            }
+        }
+
+        /* 監聽事件addEventListener('事件名稱',事件發生時的程式處理) */
+        /* 事件發生時的程式處理1=>呼叫函式名稱，不加小括號 */
+        document.getElementById('button1').addEventListener('click', getSubjects);
+        /* 事件發生時的程式處理2=>箭頭函式，直接撰寫 */
+        document.getElementById('button1').addEventListener('click', () => {
+            for (var i = 0; i < subjects.length; i++) {
+                if (subjects[i].checked) {
+                    console.log(subjects[i].value);
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>

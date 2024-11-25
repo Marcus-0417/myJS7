@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="ul-one">
+        <li id="one" class="subjects">HTML</li>
+        <li id="two" class="subjects">CSS</li>
+        <li id="three" class="subjects">JavaScript</li>
+    </ul>
+
+    <ul id="ul-two">
+        <li class="drinks">美式</li>
+        <li id="drink-two" class="drinks">拿鐵</li>
+        <li class="drinks">紅茶</li>
+    </ul>
+
+    <script>
+        /* 取得飲料類的第二個飲料 */
+        /* 方法一 */
+        let drink2a = document.getElementsByTagName('li');
+        console.log(drink2a[4].textContent);
+
+        /* 方法二 */
+        let drink2b = document.getElementsByClassName('drinks');
+        console.log(drink2b[1].textContent);
+
+        /* 方法三 */
+        let drink2c = document.getElementById('drink-two');
+        console.log(drink2c.textContent);
+
+        /* 方法四 */
+        /* 1.取得父元素 */
+        let drink2d = document.getElementById('ul-two');
+        /* 2.從父元素取出所有子元素 */
+        let drink2dChild=drink2d.childNodes;
+        console.log(drink2dChild[3].textContent);
+    </script>
+</body>
+
+</html>

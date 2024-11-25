@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>取得元素屬性值</h1>
+    <hr>
+    <!-- <a id="engine" href="/www.google.com.tw/?hl=zh_TW">Google</a> -->
+    <a id="engine">搜尋</a>
+    <button id="btnEngine">更換搜尋引擎</button>
+
+    <script>
+        /* 取得超連結元素id */
+        let engine = document.getElementById('engine');
+
+        /* 檢查是否有超連結屬性 */
+        if (engine.hasAttribute('href')) {
+            console.log('yes');
+            /* 取出超連結 */
+            // console.log(engine.href);
+            // console.log(engine.getAttribute('href'));
+
+            /* 移除超連結屬性 */
+            engine.removeAttribute('href');
+            console.log(engine.href);
+
+            /* 清空屬性值 */
+            // engine.herf="";
+        } else {
+            // engine.href = "/www.google.com.tw/?hl=zh_TW";
+            engine.setAttribute('href', "https://www.google.com.tw/?hl=zh_TW");
+            console.log(engine.href);
+        }
+
+        // console.log(engine);
+        /* 取得超連結屬性值 */
+        // console.log(engine.href);
+
+        /* 呼叫函式名稱 */
+        function getEngine() {
+            engine.href = 'https://www.bing.com/';
+        }
+        document.querySelector('#btnEngine').addEventListener('click', getEngine);
+
+        /* 箭頭函式呼叫 */
+        document.querySelector('#btnEngine').addEventListener('click', () => {
+            /* 更換超連結屬性值 */
+            engine.href = 'https://www.bing.com/';
+        });
+
+    </script>
+</body>
+
+</html>
