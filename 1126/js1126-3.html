@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <p>
+            <label for="score">分數：</label>
+            <input type="text" id="score" maxlength="3" placeholder="請輸入分數" size="7">
+            <span id="msg"></span><br>
+        </p>
+        <p><input type="button" value="送出" id="btn1"></p>
+    </form>
+
+    <script>
+        let msg = document.getElementById('msg');
+        let score = document.getElementById('score');
+        let btn1 = document.getElementById('btn1');
+        btn1.addEventListener('click', () => {
+
+            if (score.value === "") {
+                msg.textContent = '分數不能為空';
+                msg.style.color = 'red';
+            } else if (score.value >= 60 && score.value <= 100) {
+                msg.textContent = '及格';
+                msg.style.color = 'blue';
+            } else if (score.value < 60 && score.value >= 0) {
+                msg.textContent = '不及格';
+                msg.style.color = 'red';
+            } else {
+                msg.textContent = '分數範圍 0-100';
+                msg.style.color = 'pink';
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #span1 {
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="p1">
+        <span id="span1">Hello, <br>JavaScript</span>
+        <span style="display: none;">我是看不見的內容</span>
+    </p>
+    <h3>使用textContent屬性的結果：回傳內容</h3>
+    <textarea name="" id="textContentOutput" rows="8" cols="70"></textarea>
+    <h3>使用innerText屬性的結果：回傳內容+CSS樣式+換行</h3>
+    <textarea name="" id="innerTextOutput" rows="8" cols="70"></textarea>
+    <h3>使用innerHTML屬性的結果：回傳HTML結構及內容</h3>
+    <textarea name="" id="innerHtmlOutput" rows="8" cols="70"></textarea>
+
+    <script>
+        /* 取得段落 */
+        let p1 = document.getElementById('p1');
+        /* 取得TextContent顯示區 */
+        let textContentOutput = document.getElementById('textContentOutput');
+        /* 取得InnerText顯示區 */
+        let innerTextOutput = document.getElementById('innerTextOutput');
+        /* 取得InnerHtml顯示區 */
+        let innerHtmlOutput = document.getElementById('innerHtmlOutput');
+        /* TextContent顯示區 */
+        textContentOutput.value = p1.textContent;
+        /* InnerText顯示區 */
+        innerTextOutput.value = p1.innerText;
+        /* InnerHtml顯示區 */
+        innerHtmlOutput.value = p1.innerHTML;
+    </script>
+</body>
+
+</html>

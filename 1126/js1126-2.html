@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="myInput">
+    <button id="btn1">新增節點</button><br>
+    <input type="text" id="delNodeNum">
+    <button id="btn2">刪除節點</button>
+    <ul id="ul-1" class="ul-box">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>jQuery</li>
+    </ul>
+
+    <script>
+        let btn1 = document.getElementById('btn1');
+        btn1.addEventListener('click', () => {
+            // 1.建立新節點 => createElement()
+            let newElm = document.createElement('li');
+
+            // 2.建立文字節點 => createTextNode()
+            // let newText = document.createTextNode('CSS');
+            let myInput = document.getElementById('myInput');
+            let newText = document.createTextNode(myInput.value);
+
+            // 3.將文字節點加入新節點 => appendChild()
+            /* newElm.appendChild(newText); */ // <li>CSS</li>
+            newElm.appendChild(newText);
+
+            // 4.取得加入新節點位置 => getElementByTagName()
+            // let position = document.getElementsByTagName('ul')[0];
+            let position = document.getElementById('ul-1');
+            // let position = document.getElementsByClassName('ul-box')[0];
+
+            // 5.將新節點加入到步驟4的元素中最後一個子節點 => appendChild()
+            position.appendChild(newElm);
+
+        });
+
+        let btn2 = document.getElementById('btn2');
+        btn2.addEventListener('click', () => {
+            // 取得所有li的項目個數
+            let liCount = document.getElementsByTagName('li').length;
+
+            // 取得刪除第幾個節點的文字方塊內容
+            let delNodeNum = document.getElementById('delNodeNum').value - 1;
+
+            if (delNodeNum < 0 || delNodeNum > liCount - 1) {
+                alert('無此節點');
+                return;
+            }
+
+            // 移除第一個子節點
+            // let removeElm = document.getElementsByTagName('li')[0];
+
+            // 移除指定的子節點
+            let removeElm = document.getElementsByTagName('li')[delNodeNum];
+
+            // 找到被刪除的父元素節點
+            let parentElm = removeElm.parentNode;
+            // 從父元素移除指定的子節點
+            parentElm.removeChild(removeElm);
+        });
+    </script>
+</body>
+
+</html>
